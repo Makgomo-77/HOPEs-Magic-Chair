@@ -1,1 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Salon | Professional Hair & Beauty Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #d4a5a5;
+            --secondary-color: #f8f9fa;
+            --dark-color: #333;
+            --light-color: #fff;
+            --accent-color: #f8d7d7;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .text-center .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card .card-body {
+            padding: 30px 20px;
+        }
+        
+        .stylist-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .stylist-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stylist-img {
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .gallery-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .gallery-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .testimonial-card {
+            border-left: 4px solid var(--primary-color);
+            background-color: var(--secondary-color);
+            padding: 25px;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .before-after-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .before-after-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .before-label, .after-label {
+            position: absolute;
+            top: 20px;
+            padding: 5px 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .before-label {
+            left: 20px;
+        }
+        
+        .after-label {
+            right: 20px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .booking-btn {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        
+        .booking-btn:hover {
+            background-color: #c89595;
+            border-color: #c89595;
+            transform: translateY(-3px);
+        }
+        
+        .page-header {
+            background-color: var(--accent-color);
+            padding: 80px 0 40px;
+            margin-bottom: 50px;
+        }
+        
+        .blog-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .price-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .mobile-showcase {
+            background-color: var(--secondary-color);
+            border-radius: 20px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-spa me-2 text-primary"></i>Glamour Salon
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn booking-btn" href="booking.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Gallery Page Header -->
+    <div class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Our Gallery</h1>
+            <p class="lead">Explore our stunning transformations and creative work</p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">Hair Transformations</h2>
+                    <p class="text-center mb-5">Browse through our collection of beautiful hair makeovers and styling creations.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Gallery Card 1 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Hair coloring service">
+                        <div class="card-body">
+                            <h5 class="card-title">Vibrant Color Transformation</h5>
+                            <p class="card-text">From natural to vibrant - our color specialists create stunning custom hues tailored to each client.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Color Service</span>
+                                <small class="text-muted">By: Sarah</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 2 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Haircut and styling">
+                        <div class="card-body">
+                            <h5 class="card-title">Precision Haircut & Styling</h5>
+                            <p class="card-text">Our expert stylists provide precision cuts that enhance your natural features and personal style.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Cut & Style</span>
+                                <small class="text-muted">By: Michael</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 3 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Bridal hairstyle">
+                        <div class="card-body">
+                            <h5 class="card-title">Elegant Bridal Styling</h5>
+                            <p class="card-text">Special occasion hairstyling for brides and bridal parties, creating timeless elegant looks.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Special Occasion</span>
+                                <small class="text-muted">By: Elena</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 4 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Balayage hair technique">
+                        <div class="card-body">
+                            <h5 class="card-title">Natural Balayage Highlights</h5>
+                            <p class="card-text">Sun-kissed, natural-looking highlights created with the delicate balayage technique.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Highlighting</span>
+                                <small class="text-muted">By: Jessica</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 5 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1560857793-77db5b72c9b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Men's haircut">
+                        <div class="card-body">
+                            <h5 class="card-title">Modern Men's Grooming</h5>
+                            <p class="card-text">Contemporary cuts and grooming services tailored for today's modern gentleman.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Men's Grooming</span>
+                                <small class="text-muted">By: David</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 6 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Curly hair styling">
+                        <div class="card-body">
+                            <h5 class="card-title">Curly Hair Specialization</h5>
+                            <p class="card-text">Expert care and styling for all curl types, embracing and enhancing natural texture.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Texture Specializing</span>
+                                <small class="text-muted">By: Maya</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nail & Makeup Gallery -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">Nail Art & Makeup</h2>
+                    <p class="text-center mb-5">Discover our creative nail designs and professional makeup artistry.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Gallery Card 7 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Nail art design">
+                        <div class="card-body">
+                            <h5 class="card-title">Creative Nail Art</h5>
+                            <p class="card-text">Intricate nail designs and art for those who want to express their unique personality.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Nail Art</span>
+                                <small class="text-muted">By: Chloe</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 8 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Makeup application">
+                        <div class="card-body">
+                            <h5 class="card-title">Professional Makeup Artistry</h5>
+                            <p class="card-text">From natural daytime looks to glamorous evening makeup for special occasions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Makeup</span>
+                                <small class="text-muted">By: Sophia</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 9 -->
+                <div class="col-md-4">
+                    <div class="card gallery-card">
+                        <img src="https://images.unsplash.com/photo-1607779143096-3e9b8e0b2d5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Spa manicure">
+                        <div class="card-body">
+                            <h5 class="card-title">Luxury Spa Manicure</h5>
+                            <p class="card-text">Indulgent nail care treatments that nourish and beautify your hands and nails.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Spa Services</span>
+                                <small class="text-muted">By: Olivia</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">Transformations</h2>
+                    <p class="text-center mb-5">Visual proof of our amazing work - see the stunning before and after results.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="before-after-container">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="before-after-img" alt="Before and after haircut">
+                        <div class="before-label">Before</div>
+                        <div class="after-label">After</div>
+                    </div>
+                    <p class="text-center fw-bold">Complete Style Transformation</p>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="before-after-container">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="before-after-img" alt="Before and after color">
+                        <div class="before-label">Before</div>
+                        <div class="after-label">After</div>
+                    </div>
+                    <p class="text-center fw-bold">Vibrant Color Makeover</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">Client Testimonials</h2>
+                    <p class="text-center mb-5">See what our clients are saying about their experience at Glamour Salon.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="testimonial-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Emma Wilson</h5>
+                                <small class="text-muted">Regular Client</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"I've been coming to Glamour Salon for two years now, and I'm always impressed with the results. Sarah always knows exactly what I want!"</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" class="testimonial-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">James Rodriguez</h5>
+                                <small class="text-muted">First-time Client</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The online booking was so convenient, and Michael gave me the best haircut I've had in years. Will definitely be coming back!"</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/67.jpg" class="testimonial-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Sophia Chen</h5>
+                                <small class="text-muted">Bridal Client</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Elena did an amazing job with my wedding hair and my entire bridal party. She captured exactly the elegant look I wanted!"</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready for Your Transformation?</h2>
+            <p class="lead mb-4">Book your appointment online and experience the Glamour Salon difference</p>
+            <a href="booking.html" class="btn booking-btn btn-lg">Book Appointment Online <i class="fas fa-calendar-check ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4"><i class="fas fa-spa me-2"></i>Glamour Salon</h4>
+                    <p>Providing exceptional hair, nail, and makeup services with a focus on client satisfaction and creativity since 2010.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">Contact & Location</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Beauty Street, Style City, SC 12345</p>
+                    <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@glamoursalon.com</p>
+                    <p><i class="fas fa-clock me-2"></i> Mon-Fri: 9am-7pm, Sat: 9am-5pm, Sun: 10am-4pm</p>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="services.html" class="text-white text-decoration-none">Services & Pricing</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-white text-decoration-none">Our Gallery</a></li>
+                        <li class="mb-2"><a href="team.html" class="text-white text-decoration-none">Meet Our Team</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none">Beauty Blog</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Glamour Salon. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Designed with <i class="fas fa-heart text-danger"></i> for beauty enthusiasts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Simple gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to cards when they come into view
+            const cards = document.querySelectorAll('.gallery-card, .service-card, .stylist-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Booking form modal simulation
+            const bookButtons = document.querySelectorAll('.booking-btn');
+            bookButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        alert('Online booking system would open here. This is a demonstration website.');
+                    }
+                });
+            });
+            
+            // Mobile-first design alert
+            if (window.innerWidth < 768) {
+                console.log("Mobile-first design optimized for salon clients searching on phones 💷");
+            }
+        });
+    </script>
+</body>
+</html>
